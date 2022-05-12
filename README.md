@@ -7,7 +7,7 @@ Create Tooltips with D3.JS for your d3-based visualizations charts simple and ea
 ### Import to HTML
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://d3js.org/d3-tooltip.v1.js"></script>
+    <script src="https://githubraw.com/ehsanghaffarii/d3-tooltip/main/examples/index.js"></script>
 
 ### Install with NPM
 
