@@ -1,9 +1,9 @@
 /*
-Styles for the tooltip plugin
+Styles for the tooltipy plugin
 Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
 */
 
-.d3-tooltip {
+.d3-tooltipy {
   line-height: 1;
   font-weight: bold;
   padding: 14px;
@@ -13,8 +13,8 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   pointer-events: none;
 }
 
-/* Creates a small triangle extender for the tooltip */
-.d3-tooltip:after {
+/* Creates a small triangle extender for the tooltipy */
+.d3-tooltipy:after {
   box-sizing: border-box;
   display: inline;
   font-size: 10px;
@@ -25,8 +25,8 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   pointer-events: none;
 }
 
-/* Northward tooltips */
-.d3-tooltip.n:after {
+/* Northward tooltipys */
+.d3-tooltipy.n:after {
   content: "\25BC";
   margin: -1px 0 0 0;
   top: 100%;
@@ -34,16 +34,16 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   text-align: center;
 }
 
-/* Eastward tooltips */
-.d3-tooltip.e:after {
+/* Eastward tooltipys */
+.d3-tooltipy.e:after {
   content: "\25C0";
   margin: -4px 0 0 0;
   top: 50%;
   left: -8px;
 }
 
-/* Southward tooltips */
-.d3-tooltip.s:after {
+/* Southward tooltipys */
+.d3-tooltipy.s:after {
   content: "\25B2";
   margin: 0 0 1px 0;
   top: -8px;
@@ -51,15 +51,15 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   text-align: center;
 }
 
-/* Westward tooltips */
-.d3-tooltip.w:after {
+/* Westward tooltipys */
+.d3-tooltipy.w:after {
   content: "\25B6";
   margin: -4px 0 0 -1px;
   top: 50%;
   left: 100%;
 }
 
-.tooltip_hdr {
+.tooltipy_hdr {
   background: #494f5e;
   border-left: 1px solid #494f5e;
   border-right: 1px solid #494f5e;
@@ -73,7 +73,7 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   z-index: 100000;
 }
 
-.tooltip_bdy {
+.tooltipy_bdy {
   background: #494f5e;
   border-left: 1px solid #494f5e;
   border-right: 1px solid #494f5e;
@@ -84,7 +84,7 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   z-index: 100000;
 }
 
-.tooltip_tab {
+.tooltipy_tab {
   background: #494f5e;
   font-family: "Lato", Verdana, Tahoma, sans-serif;
   font-size: 12px;
@@ -92,12 +92,12 @@ Author: Ehsan Ghaffar (https://www.EhsanGhaffarii.ir)
   overflow: hidden;
 }
 
-.tooltip_short_hdr {
+.tooltipy_short_hdr {
   visibility: hidden;
   overflow: hidden;
 }
 
-.tooltip_short_bdy {
+.tooltipy_short_bdy {
   background: #494f5e;
   border: 1px solid #494f5e;
   padding: 6px;

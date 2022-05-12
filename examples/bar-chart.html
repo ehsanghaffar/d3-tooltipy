@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Bar Chart tooltip Example</title>
+    <title>Bar Chart tooltipy Example</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
     <script type="text/javascript" src="../dist/index.js"></script>
     <script type="text/javascript">
@@ -62,7 +62,7 @@
         { total: 0, days: [0, 0, 0, 0, 0, 0, 0] },
       ];
     </script>
-    <link rel="stylesheet" href="tooltip.css" />
+    <link rel="stylesheet" href="tooltipy.css" />
     <style type="text/css">
       body {
         padding: 40px;
@@ -97,9 +97,9 @@
   <body>
     <div id="graph"></div>
     <script type="text/javascript">
-      var tooltip = d3
-        .tooltip()
-        .attr("class", "d3-tooltip")
+      var tooltipy = d3
+        .tooltipy()
+        .attr("class", "d3-tooltipy")
         .html(function (d) {
           return `
             <span> Total ${d.total}</span>
@@ -147,7 +147,7 @@
       x.domain(d3.range(data.length));
       y.domain([0, max]);
 
-      vis.call(tooltip);
+      vis.call(tooltipy);
       vis.append("g").attr("class", "y axis").call(yAxis);
 
       vis
@@ -181,8 +181,8 @@
         .attr("y", function (d) {
           return y(d.total);
         })
-        .on("mouseover", tooltip.show)
-        .on("mouseout", tooltip.hide);
+        .on("mouseover", tooltipy.show)
+        .on("mouseout", tooltipy.hide);
     </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 components
 bower_components
 node_modules
-d3-tooltip.min.*
+d3-tooltipy.min.*
 /.project
 dist/
 .DS_Store

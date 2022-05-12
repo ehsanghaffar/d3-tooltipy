@@ -1,12 +1,12 @@
 {
-  "name": "d3-tooltip",
+  "name": "d3-tooltipy",
   "version": "0.0.1",
   "description": "Tooltip generator for d3 svg visualization library",
   "keywords": [
     "d3",
     "tooltip"
   ],
-  "homepage": "https://github.com/ehsanghaffarii/d3-tooltip",
+  "homepage": "https://github.com/ehsanghaffarii/d3-tooltipy",
   "bugs": {
     "url": "https://github.com/ehsanghaffarii/issues"
   },

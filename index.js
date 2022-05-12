@@ -1,5 +1,5 @@
 /**
- * d3.tooltip - A simple d3 tooltip for d3.js Chart Visualization
+ * d3.tooltipy - A simple d3 tooltipy for d3.js Chart Visualization
  * @version v0.0.1
  * @author Ehsan Ghaffar <ghafari.5000@gmail.com>
  * @license MIT
@@ -11,20 +11,20 @@ import { selection, select } from 'd3-selection'
 
 
 /**
- * Main function to create a tooltip
- * @returns {Object} - Returns the tooltip object
+ * Main function to create a tooltipy
+ * @returns {Object} - Returns the tooltipy object
  * @example
- * const tooltip = d3.tooltip()
+ * const tooltipy = d3.tooltipy()
  *  .html(d => `<div>${d.name}</div>`)
- *  .attr('class', 'tooltip')
+ *  .attr('class', 'tooltipy')
  *  .style('background-color', '#fff')
  *  .on('mouseover', d => console.log(d))
  *  .on('mouseout', d => console.log(d))
  */
 export default function() {
-  var direction   = d3TooltipDirection,
-      offset      = d3TooltipOffset,
-      html        = d3TooltipHTML,
+  var direction   = d3TooltipyDirection,
+      offset      = d3TooltipyOffset,
+      html        = d3TooltipyHTML,
       rootElement = document.body,
       node        = initNode(),
       svg         = null,
@@ -32,14 +32,14 @@ export default function() {
       target      = null
 
   /**
-   * The tooltip svg element
+   * The tooltipy svg element
    * @type {SVGElement}
    * @private
-   * @memberof d3.tooltip
+   * @memberof d3.tooltipy
    * @instance
    * @member svg
    */
-  function tooltip(vis) {
+  function tooltipy(vis) {
     svg = getSVGNode(vis)
     if (!svg) return
     point = svg.createSVGPoint()
@@ -47,15 +47,15 @@ export default function() {
   }
 
   /**
-   * Show the tooltip
+   * Show the tooltipy
    * @param {Object} d - The data object
    * @param {Object} [event] - The event object
-   * @returns {Object} - Returns the tooltip node
+   * @returns {Object} - Returns the tooltipy node
    * @example
-   * const tooltip = d3.tooltip()
-   * tooltip.show(d, event)
+   * const tooltipy = d3.tooltipy()
+   * tooltipy.show(d, event)
    */
-  tooltip.show = function() {
+  tooltipy.show = function() {
     var args = Array.prototype.slice.call(arguments)
     if (args[args.length - 1] instanceof SVGElement) target = args.pop()
 
@@ -79,35 +79,35 @@ export default function() {
       .style('top', (coords.top + poffset[0]) + scrollTop + 'px')
       .style('left', (coords.left + poffset[1]) + scrollLeft + 'px')
 
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Hide the tooltip
+   * Hide the tooltipy
    */
-  tooltip.hide = function() {
+  tooltipy.hide = function() {
     var nodel = getNodeEl()
     nodel.style('opacity', 0).style('pointer-events', 'none')
-    return tooltip
+    return tooltipy
   }
 
   /**
    * Proxy attr calls to the d3 tip container
    * @param {String} n - The name of the attribute
    * @param {String} v - The value of the attribute
-   * @returns {Object} - Returns tooltip or attribute value
+   * @returns {Object} - Returns tooltipy or attribute value
    * @example
    * d3.tip().attr('id', 'test')
    */
   // eslint-disable-next-line no-unused-vars
-  tooltip.attr = function(n, v) {
+  tooltipy.attr = function(n, v) {
     if (arguments.length < 2 && typeof n === 'string') {
       return getNodeEl().attr(n)
     }
 
     var args =  Array.prototype.slice.call(arguments)
     selection.prototype.attr.apply(getNodeEl(), args)
-    return tooltip
+    return tooltipy
   }
 
   /**
@@ -115,102 +115,102 @@ export default function() {
    * Sets or gets a style value
    * @param {String} n - The name of the style
    * @param {String} v - The value of the style
-   * @returns {Object} - Returns tooltip or style property value
+   * @returns {Object} - Returns tooltipy or style property value
    * @example
-   * // Set tooltip style
-   * tooltip.style('background-color', '#ff0000')
+   * // Set tooltipy style
+   * tooltipy.style('background-color', '#ff0000')
    */
   // eslint-disable-next-line no-unused-vars
-  tooltip.style = function(n, v) {
+  tooltipy.style = function(n, v) {
     if (arguments.length < 2 && typeof n === 'string') {
       return getNodeEl().style(n)
     }
 
     var args = Array.prototype.slice.call(arguments)
     selection.prototype.style.apply(getNodeEl(), args)
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Set or get the direction of the tooltip
+   * Set or get the direction of the tooltipy
    * @param {String} v - One of n(north), s(south), e(east), or w(west),
    * nw(northwest), sw(southwest), ne(northeast) or se(southeast)
-   * @returns {Object} - Returns tooltip or direction
+   * @returns {Object} - Returns tooltipy or direction
    */
-  tooltip.direction = function(v) {
+  tooltipy.direction = function(v) {
     if (!arguments.length) return direction
     direction = v == null ? v : functor(v)
 
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Set or get the offset of the tooltip
-   * @param {Array} v - The offset of the tooltip
-   * @returns {Object} - Returns offset or tooltip
+   * Set or get the offset of the tooltipy
+   * @param {Array} v - The offset of the tooltipy
+   * @returns {Object} - Returns offset or tooltipy
    * @example
-   * tooltip.offset([20, 20])
+   * tooltipy.offset([20, 20])
    */
-  tooltip.offset = function(v) {
+  tooltipy.offset = function(v) {
     if (!arguments.length) return offset
     offset = v == null ? v : functor(v)
 
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Set or get the html value of the tooltip
-   * @param {String} v - The html value of the tooltip
-   * @returns {Object} - Returns html value or tooltip
+   * Set or get the html value of the tooltipy
+   * @param {String} v - The html value of the tooltipy
+   * @returns {Object} - Returns html value or tooltipy
    * @example
-   * tooltip.html('<div>Hello World</div>')
+   * tooltipy.html('<div>Hello World</div>')
    */
-  tooltip.html = function(v) {
+  tooltipy.html = function(v) {
     if (!arguments.length) return html
     html = v == null ? v : functor(v)
 
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Set or get the root element anchor of the tooltip
-   * @param {Object} v - The root element anchor of the tooltip
-   * @returns {Object} - Returns root node of tooltip
+   * Set or get the root element anchor of the tooltipy
+   * @param {Object} v - The root element anchor of the tooltipy
+   * @returns {Object} - Returns root node of tooltipy
    * @example
-   * tooltip.rootElement(document.body)
+   * tooltipy.rootElement(document.body)
    */
-  tooltip.rootElement = function(v) {
+  tooltipy.rootElement = function(v) {
     if (!arguments.length) return rootElement
     rootElement = v == null ? v : functor(v)
 
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Destroy the tooltip
-   * @returns {Object} - Returns the tooltip object
+   * Destroy the tooltipy
+   * @returns {Object} - Returns the tooltipy object
    * @example
-   * tooltip.destroy()
+   * tooltipy.destroy()
    */
-  tooltip.destroy = function() {
+  tooltipy.destroy = function() {
     if (node) {
       getNodeEl().remove()
       node = null
     }
-    return tooltip
+    return tooltipy
   }
 
   /**
-   * Initialize the tooltip node
-   * @returns {Object} - Returns the tooltip node
+   * Initialize the tooltipy node
+   * @returns {Object} - Returns the tooltipy node
    * @private
    */
-  function d3TooltipDirection() { return 'n' }
-  function d3TooltipOffset() { return [0, 0] }
-  function d3TooltipHTML() { return ' ' }
+  function d3TooltipyDirection() { return 'n' }
+  function d3TooltipyOffset() { return [0, 0] }
+  function d3TooltipyHTML() { return ' ' }
 
    /**
-   * Get the direction callback for the tooltip
+   * Get the direction callback for the tooltipy
    * @param {String} dir - The direction
    * @returns {Function} - Returns the direction callback
    * @private
@@ -332,8 +332,8 @@ export default function() {
   }
 
   /**
-   * Initialize the tooltip node
-   * @returns {Object} - Returns the tooltip node
+   * Initialize the tooltipy node
+   * @returns {Object} - Returns the tooltipy node
    * @private
    */
   function initNode() {
@@ -349,8 +349,8 @@ export default function() {
   }
 
   /**
-   * Get the svg Tooltip node
-   * @returns {Object} - Returns the svg tooltip node
+   * Get the svg Tooltipy node
+   * @returns {Object} - Returns the svg tooltipy node
    * @private
    */
   function getSVGNode(element) {
@@ -436,5 +436,5 @@ export default function() {
     }
   }
 
-  return tooltip
+  return tooltipy
 }

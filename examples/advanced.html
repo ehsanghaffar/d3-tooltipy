@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>d3.tooltip.js - Tooltooltips for D3</title>
+    <title>d3.tooltipy.js - Tooltooltipys for D3</title>
     <meta charset="utf-8" />
     <title>Bar Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
     <script type="text/javascript" src="../dist/index.js"></script>
-    <link rel="stylesheet" href="tooltip.css" />
+    <link rel="stylesheet" href="tooltipy.css" />
     <style type="text/css">
       body {
         padding: 40px;
@@ -14,7 +14,7 @@
         font-size: 12px;
       }
 
-      .d3-tooltip text {
+      .d3-tooltipy text {
         fill: #fff;
         font-size: 12px;
         stroke: none;
@@ -55,9 +55,9 @@
         random2 = d3.randomIrwinHall(1);
       for (var i = 0; i < NODES; i++) data.push(random(i));
 
-      var tooltip = d3
-        .tooltip()
-        .attr("class", "d3-tooltip")
+      var tooltipy = d3
+        .tooltipy()
+        .attr("class", "d3-tooltipy")
         .html(function (d) {
           return d.toFixed(2);
         })
@@ -85,7 +85,7 @@
         .attr("height", h)
         .append("g")
         .attr("transform", "translate(20, 20)")
-        .call(tooltip);
+        .call(tooltipy);
 
       // Create some artificial nesting
       gs = vis.append("g").append("g");
@@ -103,8 +103,8 @@
           return x(i);
         })
         .attr("cy", y)
-        .on("mouseover", tooltip.show)
-        .on("mouseout", tooltip.hide);
+        .on("mouseover", tooltipy.show)
+        .on("mouseout", tooltipy.hide);
 
       var elements = circles.nodes()[0],
         length = elements.length;

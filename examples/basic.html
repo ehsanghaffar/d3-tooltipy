@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Example of tooltip</title>
+    <title>Example of tooltipy</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
     <script type="text/javascript" src="../dist/index.js"></script>
-    <link rel="stylesheet" href="tooltip.css" />
+    <link rel="stylesheet" href="tooltipy.css" />
     <style type="text/css">
       body {
         padding: 40px;
@@ -62,9 +62,9 @@
 
       var directions = ["n", "w", "e", "s"];
       directions.forEach(function (direction) {
-        var tooltip = d3
-          .tooltip()
-          .attr("class", "d3-tooltip")
+        var tooltipy = d3
+          .tooltipy()
+          .attr("class", "d3-tooltipy")
           .html(function (d) {
             return d.toFixed(2);
           })
@@ -89,7 +89,7 @@
           .attr("height", h)
           .append("g")
           .attr("transform", "translate(" + b + "," + b + ")")
-          .call(tooltip);
+          .call(tooltipy);
 
         vis
           .append("text")
@@ -111,8 +111,8 @@
             return x(i);
           })
           .attr("cy", y)
-          .on("mouseover", tooltip.show)
-          .on("mouseout", tooltip.hide);
+          .on("mouseover", tooltipy.show)
+          .on("mouseout", tooltipy.hide);
       });
     </script>
   </body>

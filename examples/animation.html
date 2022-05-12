@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>d3.tooltip.js</title>
+    <title>d3.tooltipy.js</title>
     <meta charset="utf-8" />
     <title>CSS Transitions</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
     <script type="text/javascript" src="../dist/index.js"></script>
-    <link rel="stylesheet" href="tooltip.css" />
+    <link rel="stylesheet" href="tooltipy.css" />
     <script type="text/javascript">
       data = [
         { total: 225, days: [12, 51, 60, 26, 38, 31, 7] },
@@ -114,7 +114,7 @@
         -webkit-backface-visibility: hidden;
       }
 
-      .d3-tooltip.animate {
+      .d3-tooltipy.animate {
         animation: bounceIn 0.2s ease-out;
         -webkit-animation: bounceIn 0.2s ease-out;
       }
@@ -146,9 +146,9 @@
   <body>
     <div id="graph"></div>
     <script type="text/javascript">
-      var tooltip = d3
-        .tooltip()
-        .attr("class", "d3-tooltip")
+      var tooltipy = d3
+        .tooltipy()
+        .attr("class", "d3-tooltipy")
         .html(function (d) {
           return (
             "<span> Total:" +
@@ -191,7 +191,7 @@
       x.domain(d3.range(data.length));
       y.domain([0, max]);
 
-      vis.call(tooltip);
+      vis.call(tooltipy);
       vis.append("g").attr("class", "y axis").call(yAxis);
 
       vis
@@ -226,12 +226,12 @@
           return y(d.total);
         })
         .on("mouseover", function (d) {
-          // tooltip.attr("class", "d3-tooltip animate").show(d);
-          // tooltip.show(d);
+          // tooltipy.attr("class", "d3-tooltipy animate").show(d);
+          // tooltipy.show(d);
         })
         .on("mouseout", function (d) {
-          // tooltip.attr("class", "d3-tooltip").show(d);
-          tooltip.hide();
+          // tooltipy.attr("class", "d3-tooltipy").show(d);
+          tooltipy.hide();
         });
     </script>
   </body>

@@ -4,7 +4,7 @@ export default {
   output:   {
     globals: { 'd3-selection': 'd3', 'd3-collection': 'd3' },
     file:    'dist/index.js',
-    name:    'd3.tooltip',
+    name:    'd3.tooltipy',
     extend:  true,
     format:  'umd',
   },
