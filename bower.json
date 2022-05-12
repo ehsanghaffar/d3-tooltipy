@@ -1,0 +1,19 @@
+{
+  "name": "d3-tooltip",
+  "version": "0.0.1-alpha.1",
+  "main": "index.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "examples",
+    "Makefile",
+    "docs",
+    "DS_Store"
+  ],
+  "dependencies": {
+    "d3-collection": "^1.0.1",
+    "d3-selection": "^1.0.2"
+  }
+}
