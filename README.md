@@ -1,6 +1,6 @@
-# D3.JS Tooltip
+# D3.JS Tooltipy
 
-Create Tooltips with D3.JS for your d3-based visualizations charts simple and easy.
+Create Tooltip with D3.JS for your d3-based visualizations charts simple and easy.
 
 ## Installation
 
@@ -19,7 +19,7 @@ npm install d3-tooltipy
 
 ```javascript
 
-var tooltip = d3.tooltip()
+var tooltip = d3.tooltipy()
   .attr('class', 'tooltip')
   // .html(function(d) { return d; })
   .html(function(d) { return d.name; })
