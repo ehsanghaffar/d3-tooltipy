@@ -1,6 +1,6 @@
 /**
  * d3.tooltipy - A simple d3 tooltipy for d3.js Chart Visualization
- * @version v0.0.1
+ * @version v0.0.2
  * @author Ehsan Ghaffar <ghafari.5000@gmail.com>
  * @license MIT
  * @date 2022-May-12
